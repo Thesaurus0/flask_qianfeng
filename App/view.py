@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template
 
-blue = Blueprint('blue01', __name__)
+blue = Blueprint('blue01', __name__, url_prefix='/abc')
 
 from App.model import Person, Student
 from App.ext import  db
@@ -14,10 +14,10 @@ def init_view(app):
 def hello_world():
     return render_template('index.html')
 
-@blue.route('/addstu/')
-def add_student():
+@blue.route('/addstu/<int:id>/')
+def add_student(id):
     stu = Student()
-    stu.name = 'haha'
+    stu.name = 'haha' + str(id)
     db.session.add(stu)
     db.session.commit()
     return 'sucess'
@@ -29,3 +29,9 @@ def delete_stu(id):
     db.session.delete(stu)
     db.session.commit()
     return 'delete done.'
+
+
+@blue.route('/showallstu/')
+def showallstu():
+    stus = Student.query.all()
+    return render_template('students.html', students = stus)
