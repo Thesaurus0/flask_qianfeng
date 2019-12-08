@@ -16,6 +16,7 @@ print('env:' + env)
 
 app = create_app(env)
 
+# @app.cli.command('db')
 
 @app.cli.command('dbinit', help='db creating')
 def db_init():

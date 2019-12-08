@@ -21,14 +21,14 @@ class DEVConfig(BaseConfig):
     db_info = {
         'ENGINE': 'mysql',
         'DRIVER': 'pymysql',
-        'USER': '',
-        'PASSWORD': '',
+        'USER': 'root',
+        'PASSWORD': 'gz.1234',
         'HOST': 'localhost',
         'PORT': '3306',
-        'NAME': 'flask_db_mysql'
+        'NAME': 'qianfeng'
     }
-    # SQLALCHEMY_DATABASE_URI = get_db_uri(db_info)
-    SQLALCHEMY_DATABASE_URI ='sqlite:///' + r'F:/Database_Files/sqlite/qianfeng.db'
+    SQLALCHEMY_DATABASE_URI = get_db_uri(db_info)
+    # SQLALCHEMY_DATABASE_URI ='sqlite:///' + r'F:/Database_Files/sqlite/qianfeng.db'
     print('SQLALCHEMY_DATABASE_URI=' + SQLALCHEMY_DATABASE_URI)
 
 
@@ -37,11 +37,11 @@ class UATConfig(BaseConfig):
     db_info = {
         'ENGINE': 'mysql',
         'DRIVER': 'pymysql',
-        'USER': '',
-        'PASSWORD': '',
+        'USER': 'root',
+        'PASSWORD': 'gz.1234',
         'HOST': 'localhost',
         'PORT': '3306',
-        'NAME': 'flask_db_mysql'
+        'NAME': 'qianfeng'
     }
     SQLALCHEMY_DATABASE_URI = get_db_uri(db_info)
 
@@ -51,11 +51,11 @@ class PRODConfig(BaseConfig):
     db_info = {
         'ENGINE': 'mysql',
         'DRIVER': 'pymysql',
-        'USER': '',
-        'PASSWORD': '',
+        'USER': 'root',
+        'PASSWORD': 'gz.1234',
         'HOST': 'localhost',
         'PORT': '3306',
-        'NAME': 'flask_db_mysql'
+        'NAME': 'qianfeng'
     }
     SQLALCHEMY_DATABASE_URI = get_db_uri(db_info)
 
